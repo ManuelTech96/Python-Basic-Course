@@ -5,11 +5,15 @@ server = 'localhost'
 database = 'TurboRenting2'
 username = 'sa'
 password = 'test1234'
-driver = 'ODBC Driver 18 for SQL Server'
+driver = '{ODBC Driver 17 for SQL Server}'
 
-conn = pyodbc.connect('driver={%s};server=%s;databse=%s;uid=%s;pwd=%s' % (driver, server, database, username, password))
+conn = pyodbc.connect('Driver='+driver+';Server='+server+';Database='+database+';UID='+username+';PWD='+password)
 
-# Query
+pd.read_sql("SELECT * FROM dbo.Clients c WHERE c.Dni like '71725443N'", conn)
 
-res = pd.read_sql("SELECT * FROM dbo.Clients c WHERE c.Dni like '71725443N'", con = conn)
-res
+# cursor = conn.cursor()
+
+# cursor.execute()
+
+# for row in cursor.fetchall():
+#     print(row)
