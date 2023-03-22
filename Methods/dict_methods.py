@@ -5,7 +5,7 @@ diccionario = {
     "trabajo": True
 }
 
-#Return an objetc dict_item (can be iterated)
+#Return an object dict_item (can be iterated)
 claves = diccionario.keys()
 
 #Return the value by its key and return none while key or value not in dictionary
